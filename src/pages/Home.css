@@ -1,0 +1,317 @@
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5; /* default */
+}
+
+/* Section base styling */
+.latest-stories,
+.featured-books,
+.top-authors,
+.top-books {
+  width: 100%;           /* full viewport width */
+  padding: 10px 0;        /* vertical spacing */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+/* Section container to limit content width (cards stay centered) */
+.latest-stories .container,
+.featured-books .container,
+.top-authors .container,
+.top-books .container {
+  width: 100%;
+  max-width: 1200px;      /* content max width */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Latest Stories Section */
+.latest-stories {
+  background: linear-gradient(to right, #424040, #424040);
+}
+.featured-books {
+  background: linear-gradient(to right, #696868, #696868);
+}
+.featured-books h2 {
+  font-size: 25px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  width: 100%;
+}
+.latest-stories h2 {
+  font-size: 25px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Horizontal Scroll Container */
+.story-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+/* Hide default scrollbar */
+.story-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.story-scroll::-webkit-scrollbar-thumb {
+  background: #ffb400;
+  border-radius: 3px;
+}
+.story-scroll::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+/* Story Card */
+.story-card {
+  min-width: 200px;
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.story-card:hover {
+  transform: translateY(-5px);
+}
+
+.story-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.story-card h3 {
+  padding: 10px;
+  font-size: 16px;
+  color: #2563eb;
+  font-weight: 600;
+  margin: 10px 0 0 0;
+}
+
+/* Story Card Buttons */
+.story-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.story-buttons .btn {
+  padding: 6px 6px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.read-btn {
+  background-color: #2563eb;
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.read-btn:hover {
+  background-color: #1e4db7;
+}
+
+.download-btn {
+  background-color: #f7f8fa;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+}
+
+.download-btn:hover {
+  background-color: #e0e7ff;
+}
+
+/* Top Books Section */
+.top-books {
+  background: linear-gradient(to right, #382c2c, #2c1f1f);
+}
+
+.top-books h2 {
+  color: #efe304;
+}
+
+/* Horizontal scroll same as Latest Stories */
+.top-books .story-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling (same as before) */
+.top-books .story-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.top-books .story-scroll::-webkit-scrollbar-thumb {
+  background: #efe304;
+  border-radius: 3px;
+}
+.top-books .story-scroll::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .latest-stories h2,
+  .top-books h2 {
+    font-size: 22px;
+  }
+
+  .story-card {
+    min-width: 120px;
+  }
+
+  .story-card img {
+    height: 200px;
+  }
+
+  .story-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .story-buttons .btn {
+    width: 80%;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .top-books .story-card img {
+    height: 180px;
+  }
+}
+h2 span:first-child {
+  color: #f5f5f5;
+}
+
+h2 span:last-child {
+  color: #efe304;
+  margin-left: 10px;
+}
+/* Top Authors Section */
+.top-authors {
+  background: linear-gradient(to right, #2c2a2a, #1f1b1b);
+  padding: 40px 0;
+}
+
+.top-authors h2 {
+  color: #ffb400; /* different highlight color */
+  margin-top: -20px;
+}
+
+.top-authors .story-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.top-authors .story-card h3 {
+  margin-top: 10px;
+  color: #ffb400;
+  font-size: 16px;
+}
+/* Top Authors Section */
+.top-authors {
+  background: linear-gradient(to right, #2c2a2a, #1f1b1b);
+  padding: 40px 0;
+}
+
+.top-authors h2 {
+  color: #ffb400; /* heading color */
+  margin-left: 20px;
+}
+
+/* Author Card */
+.top-authors .story-card {
+  min-width: 150px;
+  background: transparent; /* optional, no card background */
+  box-shadow: none; /* optional, remove shadow */
+  text-align: center;
+  cursor: default;
+  margin-left: 50px;
+}
+
+.top-authors .story-card img {
+  width: 120px;      /* fixed size */
+  height: 120px;     /* fixed size */
+  border-radius: 50%; /* circular */
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;    /* center image */
+}
+
+.top-authors .story-card h3 {
+  margin-top: 10px;
+  color: #ffb400;
+  font-size: 16px;
+  font-weight: 600;
+}
+/* Top Authors - Mobile Responsiveness */
+/* Top Authors - Mobile Responsiveness */
+@media (max-width: 768px) {
+  .top-authors .story-card {
+    min-width: calc((100% - 40px) / 4); /* show 3 cards in viewport with some gap */
+    margin-left: 10px; /* smaller spacing */
+  }
+
+  .top-authors .story-card img {
+    width: 50px;   /* smaller avatar */
+    height: 50px;  /* smaller avatar */
+  }
+
+  .top-authors .story-card h3 {
+    font-size: 14px; /* smaller name text */
+  }
+
+  .top-authors h2 {
+    font-size: 20px; /* smaller section title */
+    margin-left: 10px;
+  }
+}
+.author-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: 3px solid #eee;
+}
+
+.author-photo:hover {
+  transform: scale(1.07);
+}
+
+.author-link {
+  text-decoration: none;
+  color: #fcfafa;
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+.author-link:hover {
+  color: #ff6600;
+}

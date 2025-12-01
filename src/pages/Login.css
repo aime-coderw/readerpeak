@@ -1,0 +1,146 @@
+/* Full page container */
+.login-container {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #787a7c, #282929);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Login card */
+.login-box {
+  width: 100%;
+  max-width: 380px;
+  background: #ffffff;
+  padding: 35px 30px;
+  border-radius: 14px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.18);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Text fields */
+.login-box input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1.7px solid #d4d4d4;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.login-box input:focus {
+  border-color: #4c6ef5;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 110, 245, 0.25);
+}
+
+/* Login button */
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: #2a2a2b;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-box button:hover {
+  background: #3b5bdb;
+}
+
+/* Error message */
+.error {
+  background: #ffdddd;
+  color: #c92a2a;
+  padding: 10px;
+  border-left: 4px solid #c92a2a;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  animation: fadeIn 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 25px 20px;
+  }
+}
+.login-links {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-links p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.login-links .link-text {
+  color: #4c6ef5;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.login-links .link-text:hover {
+  text-decoration: underline;
+}
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.popup-content h3 {
+  margin-bottom: 1rem;
+}
+
+.popup-content button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background: #3730a3;
+}

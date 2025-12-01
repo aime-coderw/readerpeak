@@ -1,0 +1,121 @@
+.profile-edit {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  font-family: "Poppins", sans-serif;
+  animation: fadeIn 0.4s ease;
+}
+
+.profile-edit h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+/* Error message */
+.error {
+  background: #ffe5e5;
+  color: #b30000;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.photo-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.preview-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #e3e3e3;
+  box-shadow: 0 0 0 4px white;
+  margin-bottom: 12px;
+  transition: 0.3s;
+}
+
+.preview-photo:hover {
+  transform: scale(1.03);
+}
+
+/* Username + bio inputs */
+.profile-edit label {
+  font-weight: 500;
+  color: #444;
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.profile-edit input[type="text"],
+.profile-edit textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1.5px solid #d7d7d7;
+  background: #fafafa;
+  outline: none;
+  transition: 0.3s;
+  resize: none;
+}
+
+.profile-edit input[type="text"]:focus,
+.profile-edit textarea:focus {
+  border-color: #6c5ce7;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+}
+
+/* File input */
+.photo-section input[type="file"] {
+  font-size: 14px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Submit button */
+.profile-edit button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.profile-edit button:hover {
+  background: #5849d4;
+  transform: translateY(-1px);
+}
+
+.profile-edit button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
