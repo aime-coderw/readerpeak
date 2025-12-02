@@ -9,7 +9,7 @@ export default function AuthorProfile() {
   const [viewerId, setViewerId] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const { id: authorParamId } = useParams(); // this is authors.id
+  const { id: authorParamId } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,7 +22,9 @@ export default function AuthorProfile() {
 
       let authorData = null;
 
-      // CASE 1: Viewing another author's profile: /author/:id
+      // -------------------------------
+      // ⭐ CASE 1: Viewing someone else
+      // -------------------------------
       if (authorParamId) {
         const { data, error } = await supabase
           .from("authors")
@@ -32,18 +34,18 @@ export default function AuthorProfile() {
 
         if (error || !data) {
           console.error("Author not found:", error?.message);
-          navigate("/404");
-          return;
+          return navigate("/404");
         }
 
         authorData = data;
       }
 
-      // CASE 2: Viewing own profile
+      // -------------------------------
+      // ⭐ CASE 2: Viewing your own page
+      // -------------------------------
       if (!authorParamId) {
         if (!user?.id) {
-          navigate("/login");
-          return;
+          return navigate("/login");
         }
 
         const { data, error } = await supabase
@@ -53,9 +55,8 @@ export default function AuthorProfile() {
           .single();
 
         if (error || !data) {
-          console.error("Author not found:", error?.message);
-          navigate("/404");
-          return;
+          // ⭐ FIXED: redirect users without author account
+          return navigate("/join-author");
         }
 
         authorData = data;
@@ -63,11 +64,11 @@ export default function AuthorProfile() {
 
       setAuthor(authorData);
 
-      // Load ALL books (no published filter)
+      // Load all books
       const { data: booksData, error: booksError } = await supabase
         .from("books")
         .select("*")
-        .eq("author_id", authorData.user_id) // correct for your schema
+        .eq("author_id", authorData.user_id)
         .order("created_at", { ascending: false });
 
       if (booksError) console.error(booksError);
@@ -103,10 +104,9 @@ export default function AuthorProfile() {
         </div>
       )}
 
-      {/* Title */}
       <h2>{isOwner ? "My Books" : `Books by ${author.name}`}</h2>
 
-      {/* Books */}
+      {/* Books section */}
       {books.length === 0 ? (
         <div className="no-books">
           {isOwner ? (
@@ -129,7 +129,6 @@ export default function AuthorProfile() {
                 alt={book.title}
               />
               <h3>{book.title}</h3>
-
               <Link to={`/story/${book.id}`} className="btn read-btn">
                 {isOwner ? "View / Edit" : "Read Story"}
               </Link>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "./supabaseClient";
 import { useNavigate } from "react-router-dom";
-import "./AuthorProfile.css";
+import "./JoinAuthor.css";
 
 export default function JoinAuthor() {
   const [name, setName] = useState("");

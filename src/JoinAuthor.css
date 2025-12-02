@@ -1,121 +1,123 @@
-.profile-edit {
-  max-width: 450px;
-  margin: 40px auto;
-  padding: 25px;
+/* Container */
+.author-profile-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 30px;
   background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   font-family: "Poppins", sans-serif;
-  animation: fadeIn 0.4s ease;
+  animation: fadeIn 0.4s ease-in-out;
 }
 
-.profile-edit h2 {
+/* Page Title */
+.author-profile-container h1 {
   text-align: center;
-  font-size: 24px;
+  font-size: 28px;
+  margin-bottom: 20px;
   font-weight: 600;
-  margin-bottom: 25px;
   color: #222;
 }
 
-/* Error message */
+/* Error Message */
 .error {
-  background: #ffe5e5;
-  color: #b30000;
-  padding: 12px;
-  border-radius: 10px;
+  background: #ffe6e6;
+  color: #c10505;
+  padding: 10px 14px;
+  border-radius: 6px;
   margin-bottom: 15px;
   text-align: center;
   font-size: 14px;
 }
 
-.photo-section {
-  text-align: center;
-  margin-bottom: 20px;
+/* Form */
+.join-author-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.preview-photo {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #e3e3e3;
-  box-shadow: 0 0 0 4px white;
-  margin-bottom: 12px;
-  transition: 0.3s;
-}
-
-.preview-photo:hover {
-  transform: scale(1.03);
-}
-
-/* Username + bio inputs */
-.profile-edit label {
+/* Label styling */
+.join-author-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
   font-weight: 500;
   color: #444;
-  display: block;
-  margin: 10px 0 5px;
 }
 
-.profile-edit input[type="text"],
-.profile-edit textarea {
-  width: 100%;
-  padding: 12px 14px;
+/* Inputs */
+.join-author-form input[type="text"],
+.join-author-form textarea,
+.join-author-form input[type="file"] {
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
   font-size: 15px;
-  border-radius: 12px;
-  border: 1.5px solid #d7d7d7;
   background: #fafafa;
+  transition: border-color 0.25s;
+}
+
+/* Input focus effect */
+.join-author-form input:focus,
+.join-author-form textarea:focus {
   outline: none;
-  transition: 0.3s;
-  resize: none;
-}
-
-.profile-edit input[type="text"]:focus,
-.profile-edit textarea:focus {
-  border-color: #6c5ce7;
+  border-color: #5c6bc0;
   background: #fff;
-  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
 }
 
-/* File input */
-.photo-section input[type="file"] {
-  font-size: 14px;
-  padding: 5px;
-  cursor: pointer;
+/* Textarea */
+.join-author-form textarea {
+  min-height: 110px;
+  resize: vertical;
 }
 
-/* Submit button */
-.profile-edit button {
+/* Button */
+.join-author-form button {
   width: 100%;
-  margin-top: 18px;
   padding: 14px;
   font-size: 16px;
   font-weight: 600;
-  background: #6c5ce7;
-  color: white;
   border: none;
-  border-radius: 12px;
+  background: #5c6bc0;
+  color: white;
+  border-radius: 10px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.25s;
 }
 
-.profile-edit button:hover {
-  background: #5849d4;
-  transform: translateY(-1px);
+/* Button hover */
+.join-author-form button:hover {
+  background: #3f4e9e;
 }
 
-.profile-edit button:disabled {
-  opacity: 0.6;
+/* Disabled state */
+.join-author-form button:disabled {
+  background: #b0b4c5;
   cursor: not-allowed;
 }
 
-/* Fade animation */
+/* Fade in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .author-profile-container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .author-profile-container h1 {
+    font-size: 24px;
   }
 }
